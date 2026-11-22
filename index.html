@@ -266,11 +266,32 @@ footer {
         opacity: 0;
     }
 }
+
+#particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+}
 </style>
 </head>
 
 <body>
-
+<div id="particles"></div>
 <header>
 <nav>
     <div class="logo">Mahbub MHD.</div>
@@ -465,6 +486,23 @@ function typeEffect() {
 }
 
 typeEffect();
+    const particleArea = document.getElementById("particles");
+
+for (let i = 0; i < 35; i++) {
+    const particle = document.createElement("span");
+
+    particle.style.position = "absolute";
+    particle.style.width = "3px";
+    particle.style.height = "3px";
+    particle.style.borderRadius = "50%";
+    particle.style.background = "#00bfff";
+    particle.style.boxShadow = "0 0 12px #00bfff";
+    particle.style.left = Math.random() * 100 + "%";
+    particle.style.top = Math.random() * 100 + "%";
+    particle.style.animation = `floatParticle ${5 + Math.random() * 8}s infinite ease-in-out`;
+
+    particleArea.appendChild(particle);
+}
 </script>
 </body>
 </html>
