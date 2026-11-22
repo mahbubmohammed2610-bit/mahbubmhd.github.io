@@ -249,6 +249,23 @@ footer {
     letter-spacing: 1px;
     box-shadow: 0 0 18px rgba(0, 191, 255, 0.12);
     }
+.typing-text {
+    color: #00bfff;
+    font-size: 22px;
+    font-weight: 600;
+    min-height: 35px;
+}
+
+.typing-cursor {
+    color: #a855f7;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
 </style>
 </head>
 
@@ -284,11 +301,9 @@ footer {
     ✦ Creative Developer
 </div>
 
-    <p data-en="Developer | Entrepreneur | Digital Creator | Student"
-       data-am="ዴቨሎፐር | ሥራ ፈጣሪ | ዲጂታል ፈጣሪ | ተማሪ">
-       Developer | Entrepreneur | Digital Creator | Student
+    <p class="typing-text">
+    <span id="typing"></span><span class="typing-cursor">|</span>
     </p>
-
     <p data-en="I am learning, building and exploring technology to turn creative ideas into useful digital projects."
        data-am="ቴክኖሎጂን እየተማርኩ እና ሀሳቦቼን ወደ ጠቃሚ ዲጂታል ፕሮጀክቶች እየቀየርኩ ነው።">
        I am learning, building and exploring technology to turn creative ideas into useful digital projects.
@@ -413,6 +428,43 @@ function toggleLanguage() {
         currentLanguage === "en" ? "አማርኛ" : "English";
 }
 </script>
+<script>
+const words = [
+    "Developer",
+    "Entrepreneur",
+    "Digital Creator",
+    "Student"
+];
 
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+    const typing = document.getElementById("typing");
+    if (!typing) return;
+
+    const word = words[wordIndex];
+
+    typing.textContent = word.substring(0, charIndex);
+
+    if (!deleting && charIndex < word.length) {
+        charIndex++;
+        setTimeout(typeEffect, 120);
+    } else if (!deleting) {
+        deleting = true;
+        setTimeout(typeEffect, 1200);
+    } else if (charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 60);
+    } else {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeEffect, 300);
+    }
+}
+
+typeEffect();
+</script>
 </body>
 </html>
