@@ -1,90 +1,379 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mahbub MHD — Developer, Entrepreneur and Digital Creator.">
-<title>Mahbub MHD | Digital Portfolio</title>
+<meta name="description" content="Mahbub MHD - Developer, Entrepreneur and Digital Creator.">
+<title>Mahbub MHD | Official Website</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#080b18;color:#f4f5ff;font-family:Arial,sans-serif;line-height:1.6}
-header{position:sticky;top:0;background:#080b18eF;backdrop-filter:blur(12px);border-bottom:1px solid #252b4a;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;z-index:10}
-.logo{font-size:23px;font-weight:bold;color:#55d8ff}
-nav a{color:#ddd;text-decoration:none;margin-left:20px;font-size:14px}
-nav a:hover{color:#a78bfa}
-.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at 50% 30%,#25205a 0%,#080b18 55%)}
-.tag{color:#65ddff;border:1px solid #4269a8;padding:7px 16px;border-radius:30px;font-size:13px}
-h1{font-size:clamp(42px,8vw,76px);line-height:1.15;margin:25px 0}
-h1 span{background:linear-gradient(90deg,#5ee7ff,#a78bfa);background-clip:text;color:transparent}
-.hero p{color:#b7bdd4;max-width:600px;font-size:18px}
-.btn{display:inline-block;margin:25px 8px 0;padding:12px 23px;border-radius:8px;text-decoration:none;font-weight:bold;background:linear-gradient(90deg,#168cff,#805bff);color:white}
-.btn.secondary{background:transparent;border:1px solid #6574a5}
-section{padding:85px 9%;max-width:1100px;margin:auto}
-.section-title{text-align:center;font-size:34px;margin-bottom:35px}
-.section-title span{color:#64dfff}
-.about{text-align:center;color:#bbc3dc;max-width:750px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.card{padding:25px;border:1px solid #283253;background:linear-gradient(145deg,#151b34,#0c1022);border-radius:15px;transition:.3s}
-.card:hover{transform:translateY(-5px);border-color:#5c9dff}
-.card h3{color:#72dfff;margin-bottom:10px}
-.card p{color:#b8bfd4;font-size:14px}
-footer{text-align:center;padding:30px;border-top:1px solid #252b4a;color:#929bb5}
-@media(max-width:600px){header{padding:15px 5%;flex-wrap:wrap}nav{margin-top:12px}nav a{margin:0 8px;font-size:12px}section{padding:65px 7%}}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #070b18;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(7, 11, 24, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+}
+
+nav {
+    max-width: 1150px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00d9ff;
+}
+
+.lang-btn {
+    background: linear-gradient(90deg, #007bff, #8a2be2);
+    border: none;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+section {
+    padding: 100px 20px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(0,120,255,.18), transparent 35%),
+      radial-gradient(circle at 80% 70%, rgba(140,0,255,.16), transparent 35%);
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, #00d9ff, #9b5cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #b8c5dc;
+    max-width: 650px;
+    margin-bottom: 22px;
+}
+
+.primary-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #007bff, #8a2be2);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(0,180,255,.5);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: #bdc9dd;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(20,30,55,.8);
+    border: 1px solid rgba(0,200,255,.2);
+    border-radius: 16px;
+    padding: 25px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #00d9ff;
+    box-shadow: 0 0 22px rgba(0,180,255,.15);
+}
+
+.card h3 {
+    color: #00d9ff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #b8c5dc;
+    font-size: 14px;
+}
+
+.skill {
+    text-align: center;
+}
+
+.project-tag {
+    display: inline-block;
+    margin-top: 15px;
+    color: #00d9ff;
+    font-size: 13px;
+}
+
+.contact-box {
+    text-align: center;
+    background: rgba(20,30,55,.8);
+    border: 1px solid rgba(0,200,255,.2);
+    padding: 35px 20px;
+    border-radius: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: #8290a8;
+    border-top: 1px solid rgba(0,200,255,.15);
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    nav {
+        justify-content: center;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 85px 18px;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">Mahbub MHD.</div>
 <nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+    <div class="logo">Mahbub MHD.</div>
+
+    <ul>
+        <li><a href="#home" data-en="Home" data-am="መነሻ">Home</a></li>
+        <li><a href="#about" data-en="About" data-am="ስለ እኔ">About</a></li>
+        <li><a href="#skills" data-en="Skills" data-am="ክህሎቶች">Skills</a></li>
+        <li><a href="#projects" data-en="Projects" data-am="ፕሮጀክቶች">Projects</a></li>
+        <li><a href="#contact" data-en="Contact" data-am="አግኙኝ">Contact</a></li>
+    </ul>
+
+    <button class="lang-btn" id="languageButton" onclick="toggleLanguage()">አማርኛ</button>
 </nav>
 </header>
 
 <main>
+
 <section class="hero" id="home">
-<div class="tag">WELCOME TO MY DIGITAL WORLD</div>
-<h1>Hi, I'm <span>Mahbub MHD</span></h1>
-<p>Developer · Entrepreneur · Digital Creator<br>
-Learning, building and creating digital experiences.</p>
-<a class="btn" href="#projects">Explore My Work</a>
-<a class="btn secondary" href="#about">About Me</a>
+    <h1>
+        <span data-en="Hi, I'm" data-am="ሰላም፣ እኔ">Hi, I'm</span>
+        <span class="gradient">Mahbub MHD</span>
+    </h1>
+
+    <p data-en="Developer | Entrepreneur | Digital Creator | Student"
+       data-am="ዴቨሎፐር | ሥራ ፈጣሪ | ዲጂታል ፈጣሪ | ተማሪ">
+       Developer | Entrepreneur | Digital Creator | Student
+    </p>
+
+    <p data-en="I am learning, building and exploring technology to turn creative ideas into useful digital projects."
+       data-am="ቴክኖሎጂን እየተማርኩ እና ሀሳቦቼን ወደ ጠቃሚ ዲጂታል ፕሮጀክቶች እየቀየርኩ ነው።">
+       I am learning, building and exploring technology to turn creative ideas into useful digital projects.
+    </p>
+
+    <a href="#projects" class="primary-btn"
+       data-en="Explore My Projects" data-am="ፕሮጀክቶቼን ይመልከቱ">
+       Explore My Projects
+    </a>
 </section>
 
 <section id="about">
-<h2 class="section-title">About <span>Me</span></h2>
-<p class="about">I am a passionate learner interested in technology, software development, digital creativity and online business. My goal is to build useful digital solutions and keep improving every day.</p>
+    <h2 class="section-title">
+        <span data-en="About Me" data-am="ስለ እኔ">About Me</span>
+    </h2>
+
+    <p class="about-text"
+       data-en="My name is Mahbub MHD. I am interested in technology, website development, mobile applications and digital business. I believe in continuous learning, creativity and building useful solutions. This website is where I share my journey and projects."
+       data-am="ስሜ Mahbub MHD ነው። በቴክኖሎጂ፣ በድረ-ገጽ ልማት፣ በሞባይል መተግበሪያዎች እና በዲጂታል ንግድ ላይ ፍላጎት አለኝ። በቀጣይነት መማርን፣ ፈጠራን እና ጠቃሚ መፍትሄዎችን መገንባትን አምናለሁ።">
+       My name is Mahbub MHD. I am interested in technology, website development, mobile applications and digital business. I believe in continuous learning, creativity and building useful solutions. This website is where I share my journey and projects.
+    </p>
 </section>
 
 <section id="skills">
-<h2 class="section-title">My <span>Skills</span></h2>
-<div class="cards">
-<div class="card"><h3>Web Development</h3><p>Learning to build modern websites and digital experiences.</p></div>
-<div class="card"><h3>Mobile Apps</h3><p>Exploring Android application development.</p></div>
-<div class="card"><h3>Digital Design</h3><p>Creating clean and modern visual ideas.</p></div>
-<div class="card"><h3>Entrepreneurship</h3><p>Exploring ideas and digital business opportunities.</p></div>
-</div>
+    <h2 class="section-title">
+        <span data-en="My Skills & Interests" data-am="ክህሎቶቼ እና ፍላጎቶቼ">My Skills & Interests</span>
+    </h2>
+
+    <div class="cards">
+        <div class="card skill">
+            <h3>Web Development</h3>
+            <p data-en="Learning to create modern websites."
+               data-am="ዘመናዊ ድረ-ገጾችን መፍጠር እየተማርኩ ነው።">
+               Learning to create modern websites.
+            </p>
+        </div>
+
+        <div class="card skill">
+            <h3>Mobile Apps</h3>
+            <p data-en="Exploring Android application development."
+               data-am="የAndroid መተግበሪያ ልማትን እያጠናሁ ነው።">
+               Exploring Android application development.
+            </p>
+        </div>
+
+        <div class="card skill">
+            <h3>Digital Design</h3>
+            <p data-en="Interested in creative digital experiences."
+               data-am="በፈጠራ ዲጂታል ዲዛይን ላይ ፍላጎት አለኝ።">
+               Interested in creative digital experiences.
+            </p>
+        </div>
+
+        <div class="card skill">
+            <h3>Entrepreneurship</h3>
+            <p data-en="Learning about ideas, products and online business."
+               data-am="ስለ ሀሳቦች፣ ምርቶች እና የመስመር ላይ ንግድ እየተማርኩ ነው።">
+               Learning about ideas, products and online business.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section id="projects">
-<h2 class="section-title">My <span>Projects</span></h2>
-<div class="cards">
-<div class="card"><h3>Personal Website</h3><p>This portfolio website — my digital home.</p></div>
-<div class="card"><h3>MkPay</h3><p>A mobile app project currently in development.</p></div>
-</div>
+    <h2 class="section-title">
+        <span data-en="My Projects" data-am="ፕሮጀክቶቼ">My Projects</span>
+    </h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Mahbub MHD Website</h3>
+            <p data-en="My personal website for sharing my profile, learning journey and digital projects."
+               data-am="የግል መገለጫዬን፣ የመማር ጉዞዬን እና ዲጂታል ፕሮጀክቶቼን ለማሳየት የምጠቀምበት ድረ-ገጽ።">
+               My personal website for sharing my profile, learning journey and digital projects.
+            </p>
+            <span class="project-tag">Personal Website</span>
+        </div>
+
+        <div class="card">
+            <h3>MkPay</h3>
+            <p data-en="A mobile application project currently in development."
+               data-am="በአሁኑ ጊዜ በልማት ላይ ያለ የሞባይል መተግበሪያ ፕሮጀክት።">
+               A mobile application project currently in development.
+            </p>
+            <span class="project-tag">Android Project</span>
+        </div>
+    </div>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Get In <span>Touch</span></h2>
-<p class="about">Interested in my projects or digital work? Contact details will be added here soon.</p>
+    <h2 class="section-title">
+        <span data-en="Contact" data-am="አግኙኝ">Contact</span>
+    </h2>
+
+    <div class="contact-box">
+        <p data-en="Thank you for visiting my website. More contact information will be added here soon."
+           data-am="ድረ-ገጼን ስለጎበኙ አመሰግናለሁ። ተጨማሪ የመገናኛ መረጃ በቅርቡ እዚህ ይጨመራል።">
+           Thank you for visiting my website. More contact information will be added here soon.
+        </p>
+    </div>
 </section>
+
 </main>
 
-<footer>© 2026 Mahbub MHD. Built with curiosity and creativity.</footer>
+<footer>
+    © 2026 Mahbub MHD. Built with curiosity and creativity.
+</footer>
+
+<script>
+let currentLanguage = "en";
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === "en" ? "am" : "en";
+
+    document.documentElement.lang = currentLanguage;
+
+    document.querySelectorAll("[data-en]").forEach(function(element) {
+        element.textContent = element.getAttribute("data-" + currentLanguage);
+    });
+
+    document.getElementById("languageButton").textContent =
+        currentLanguage === "en" ? "አማርኛ" : "English";
+}
+</script>
+
 </body>
 </html>
