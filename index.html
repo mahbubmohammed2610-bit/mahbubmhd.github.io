@@ -2,124 +2,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mahbub MHD personal website">
-  <title>Mahbub MHD | Official Website</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #0b1120;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header {
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #111c30;
-    }
-    .logo { color: #60a5fa; font-size: 25px; font-weight: bold; }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
-    }
-    .hero {
-      min-height: 75vh;
-      padding: 100px 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: linear-gradient(135deg,#0b1120,#172d50);
-    }
-    .hero h1 { font-size: clamp(38px,8vw,65px); }
-    .hero h1 span { color: #60a5fa; }
-    .hero p { color: #cbd5e1; margin: 18px 0; max-width: 550px; }
-    .btn {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      width: fit-content;
-    }
-    section { padding: 65px 8%; }
-    h2 { color: #60a5fa; margin-bottom: 18px; }
-    .card {
-      background: #17243a;
-      padding: 22px;
-      border-radius: 12px;
-      margin: 12px 0;
-    }
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #94a3b8;
-      background: #111c30;
-    }
-    @media(max-width:600px) {
-      header { flex-direction: column; gap: 12px; }
-      nav a { margin: 0 6px; }
-      .hero { min-height: 65vh; padding: 65px 7%; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mahbub MHD — Developer, Entrepreneur and Digital Creator.">
+<title>Mahbub MHD | Digital Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#080b18;color:#f4f5ff;font-family:Arial,sans-serif;line-height:1.6}
+header{position:sticky;top:0;background:#080b18eF;backdrop-filter:blur(12px);border-bottom:1px solid #252b4a;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;z-index:10}
+.logo{font-size:23px;font-weight:bold;color:#55d8ff}
+nav a{color:#ddd;text-decoration:none;margin-left:20px;font-size:14px}
+nav a:hover{color:#a78bfa}
+.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at 50% 30%,#25205a 0%,#080b18 55%)}
+.tag{color:#65ddff;border:1px solid #4269a8;padding:7px 16px;border-radius:30px;font-size:13px}
+h1{font-size:clamp(42px,8vw,76px);line-height:1.15;margin:25px 0}
+h1 span{background:linear-gradient(90deg,#5ee7ff,#a78bfa);background-clip:text;color:transparent}
+.hero p{color:#b7bdd4;max-width:600px;font-size:18px}
+.btn{display:inline-block;margin:25px 8px 0;padding:12px 23px;border-radius:8px;text-decoration:none;font-weight:bold;background:linear-gradient(90deg,#168cff,#805bff);color:white}
+.btn.secondary{background:transparent;border:1px solid #6574a5}
+section{padding:85px 9%;max-width:1100px;margin:auto}
+.section-title{text-align:center;font-size:34px;margin-bottom:35px}
+.section-title span{color:#64dfff}
+.about{text-align:center;color:#bbc3dc;max-width:750px;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{padding:25px;border:1px solid #283253;background:linear-gradient(145deg,#151b34,#0c1022);border-radius:15px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#5c9dff}
+.card h3{color:#72dfff;margin-bottom:10px}
+.card p{color:#b8bfd4;font-size:14px}
+footer{text-align:center;padding:30px;border-top:1px solid #252b4a;color:#929bb5}
+@media(max-width:600px){header{padding:15px 5%;flex-wrap:wrap}nav{margin-top:12px}nav a{margin:0 8px;font-size:12px}section{padding:65px 7%}}
+</style>
 </head>
 <body>
-
 <header>
-  <div class="logo">Mahbub MHD.</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div class="logo">Mahbub MHD.</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <main>
-  <div class="hero" id="home">
-    <h1>Hello, I'm <span>Mahbub.</span></h1>
-    <h2>Welcome to My World</h2>
-    <p>
-      Developer, Entrepreneur, Digital Creator
-      and Lifelong Learner.
-      ወደ የእኔ ዲጂታል ዓለም እንኳን በደህና መጡ።
-    </p>
-    <a class="btn" href="#about">Explore My Website</a>
-  </div>
+<section class="hero" id="home">
+<div class="tag">WELCOME TO MY DIGITAL WORLD</div>
+<h1>Hi, I'm <span>Mahbub MHD</span></h1>
+<p>Developer · Entrepreneur · Digital Creator<br>
+Learning, building and creating digital experiences.</p>
+<a class="btn" href="#projects">Explore My Work</a>
+<a class="btn secondary" href="#about">About Me</a>
+</section>
 
-  <section id="about">
-    <h2>About Me | ስለ እኔ</h2>
-    <div class="card">
-      Welcome to Mahbub MHD.
-      This is my personal space where I share
-      my journey, ideas and projects.
-    </div>
-  </section>
+<section id="about">
+<h2 class="section-title">About <span>Me</span></h2>
+<p class="about">I am a passionate learner interested in technology, software development, digital creativity and online business. My goal is to build useful digital solutions and keep improving every day.</p>
+</section>
 
-  <section id="projects">
-    <h2>My Projects | ስራዎቼ</h2>
-    <div class="card">Mobile App Development</div>
-    <div class="card">Website Development</div>
-    <div class="card">Digital Projects</div>
-  </section>
+<section id="skills">
+<h2 class="section-title">My <span>Skills</span></h2>
+<div class="cards">
+<div class="card"><h3>Web Development</h3><p>Learning to build modern websites and digital experiences.</p></div>
+<div class="card"><h3>Mobile Apps</h3><p>Exploring Android application development.</p></div>
+<div class="card"><h3>Digital Design</h3><p>Creating clean and modern visual ideas.</p></div>
+<div class="card"><h3>Entrepreneurship</h3><p>Exploring ideas and digital business opportunities.</p></div>
+</div>
+</section>
 
-  <section id="contact">
-    <h2>Contact | አግኙኝ</h2>
-    <div class="card">
-      Welcome! Contact information coming soon.
-    </div>
-  </section>
+<section id="projects">
+<h2 class="section-title">My <span>Projects</span></h2>
+<div class="cards">
+<div class="card"><h3>Personal Website</h3><p>This portfolio website — my digital home.</p></div>
+<div class="card"><h3>MkPay</h3><p>A mobile app project currently in development.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Get In <span>Touch</span></h2>
+<p class="about">Interested in my projects or digital work? Contact details will be added here soon.</p>
+</section>
 </main>
 
-<footer>
-  © 2026 Mahbub MHD. All Rights Reserved.
-</footer>
-
+<footer>© 2026 Mahbub MHD. Built with curiosity and creativity.</footer>
 </body>
 </html>
