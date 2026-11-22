@@ -164,7 +164,22 @@ section {
     border-color: #00d9ff;
     box-shadow: 0 15px 35px rgba(0, 191, 255, 0.3);
 }
+.card:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-8px);
+    border-color: #00d9ff;
+    box-shadow: 0 15px 35px rgba(0, 191, 255, 0.3);
+}
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
+.scroll-reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* እዚህ አስገባ */
 .card h3 {
     color: #00d9ff;
     margin-bottom: 10px;
@@ -507,7 +522,22 @@ for (let i = 0; i < 35; i++) {
     particle.style.animation = `floatParticle ${5 + Math.random() * 8}s infinite ease-in-out`;
 
     particleArea.appendChild(particle);
-}
+}const revealElements = document.querySelectorAll(
+    ".card, section h2, .about-text, .contact-box"
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+revealElements.forEach((element) => {
+    element.classList.add("scroll-reveal");
+    revealObserver.observe(element);
+});
 </script>
 </body>
 </html>
