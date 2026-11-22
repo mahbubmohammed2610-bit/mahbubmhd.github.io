@@ -154,16 +154,21 @@ section {
     padding: 25px;
     transition: .3s;
 }
+.card {
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
 .card:hover {
-    transform: translateY(-7px);
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-8px);
     border-color: #00d9ff;
-    box-shadow: 0 0 22px rgba(0,180,255,.15);
+    box-shadow: 0 15px 35px rgba(0, 191, 255, 0.3);
 }
 
 .card h3 {
     color: #00d9ff;
     margin-bottom: 10px;
+}
 }
 
 .card p {
