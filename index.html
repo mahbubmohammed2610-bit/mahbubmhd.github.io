@@ -267,7 +267,6 @@ footer {
     font-size: 14px;
     letter-spacing: 1px;
     box-shadow: 0 0 18px rgba(0, 191, 255, 0.12);
-}
 .digital-clock {
     margin: 8px 0 18px;
     color: #00d9ff;
@@ -275,6 +274,15 @@ footer {
     font-weight: bold;
     letter-spacing: 3px;
     text-shadow: 0 0 12px rgba(0, 217, 255, 0.7);
+}
+
+.digital-date {
+    color: #8be9ff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: -10px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 8px rgba(0, 217, 255, 0.5);
 }
 .typing-text {
     color: #00bfff;
@@ -347,10 +355,13 @@ footer {
 
 <div class="hero-badge" data-en="✦ Creative Developer" data-am="✦ የፈጠራ ዴቨሎፐር">
     ✦ Creative Developer
-</div>
 
 <div class="digital-clock" id="digitalClock">
     00:00:00
+</div>
+
+<div class="digital-date" id="digitalDate">
+    Monday, January 01, 2026
 </div>
 
 <p class="typing-text">
@@ -549,12 +560,24 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach((element) => {
     element.classList.add("scroll-reveal");
     revealObserver.observe(element);
-});function updateDigitalClock() {
-    const clock = document.getElementById("digitalClock");
-    if (!clock) return;
-
+function updateDigitalClock() {
     const now = new Date();
-    clock.textContent = now.toLocaleTimeString();
+
+    const clock = document.getElementById("digitalClock");
+    const date = document.getElementById("digitalDate");
+
+    if (clock) {
+        clock.textContent = now.toLocaleTimeString();
+    }
+
+    if (date) {
+        date.textContent = now.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+    }
 }
 
 updateDigitalClock();
