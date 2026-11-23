@@ -565,15 +565,17 @@ const revealObserver = new IntersectionObserver((entries) => {
         }
     });
 });
-
 revealElements.forEach((element) => {
     element.classList.add("scroll-reveal");
     revealObserver.observe(element);
+});
+
 function updateDigitalClock() {
     const now = new Date();
 
     const clock = document.getElementById("digitalClock");
     const date = document.getElementById("digitalDate");
+    const greeting = document.getElementById("liveGreeting");
 
     if (clock) {
         clock.textContent = now.toLocaleTimeString();
@@ -587,10 +589,23 @@ function updateDigitalClock() {
             day: "numeric"
         });
     }
+
+    if (greeting) {
+        const hour = now.getHours();
+
+        if (hour < 12) {
+            greeting.textContent = "Good Morning!";
+        } else if (hour < 18) {
+            greeting.textContent = "Good Afternoon!";
+        } else {
+            greeting.textContent = "Good Evening!";
+        }
+    }
 }
 
 updateDigitalClock();
 setInterval(updateDigitalClock, 1000);
+
 </script>
 </body>
 </html>
